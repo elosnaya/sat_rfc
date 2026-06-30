@@ -4,12 +4,12 @@ RSpec.describe Rfc::HomoclaveCalculator do
   describe "#calculate" do
     it "returns the homoclave for a natural person full name" do
       calculator = described_class.new(
-        name: "Luis Alberto",
-        first_last_name: "Osnaya",
-        second_last_name: "Balderas"
+        name: "Juan Carlos",
+        first_last_name: "Perez",
+        second_last_name: "Garcia"
       )
 
-      expect(calculator.calculate).to eq("3H")
+      expect(calculator.calculate).to eq("PE")
     end
 
     it "preserves Ñ characters after transliteration" do

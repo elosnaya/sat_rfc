@@ -3,9 +3,9 @@
 RSpec.describe Rfc::VerificationDigitCalculator do
   describe "#calculate" do
     it "returns the verification digit for a natural person RFC prefix" do
-      calculator = described_class.new("OABL8607213H")
+      calculator = described_class.new("PEGJ900315PE")
 
-      expect(calculator.calculate).to eq("6")
+      expect(calculator.calculate).to eq("9")
     end
 
     it "pads input shorter than 12 characters with spaces" do

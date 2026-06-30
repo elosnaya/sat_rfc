@@ -4,15 +4,15 @@ RSpec.describe Rfc::NaturalTenDigitsCodeCalculator do
   describe "#calculate" do
     it "returns the ten-digit code for a natural person" do
       calculator = described_class.new(
-        name: "Luis Alberto",
-        first_last_name: "Osnaya",
-        second_last_name: "Balderas",
-        day: 21,
-        month: 7,
-        year: 1986
+        name: "Juan Carlos",
+        first_last_name: "Perez",
+        second_last_name: "Garcia",
+        day: 15,
+        month: 3,
+        year: 1990
       )
 
-      expect(calculator.calculate).to eq("OABL860721")
+      expect(calculator.calculate).to eq("PEGJ900315")
     end
 
     it "obfuscates forbidden name codes" do
