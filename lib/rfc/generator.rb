@@ -16,7 +16,7 @@ module Rfc
       @verification_digit_calculator = verification_digit_calculator
     end
 
-    def generate(
+    def for_natural_person(
       name:,
       first_last_name:,
       second_last_name:,
