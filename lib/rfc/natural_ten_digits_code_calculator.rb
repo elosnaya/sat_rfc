@@ -81,7 +81,11 @@ module Rfc
     end
 
     def filter_name(name)
-      normalize(name).strip.sub(/^(MA|MA\.|MARIA|JOSE)\s+/, "")
+      return name if name.nil? || name.empty?
+
+      normalized = I18n.transliterate(name).upcase.strip
+      normalized = normalized.sub(/^(MA|MA\.|MARIA|JOSE)\s+/, "")
+      remove_discardable_terms(normalized, DISCARDABLE_TERMS)
     end
 
     def first_letter_of(word)
