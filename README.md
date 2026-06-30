@@ -9,7 +9,7 @@ Legal entity support (personas morales) is planned for a future release.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "rfc", git: "https://github.com/elosnaya/rfc.git"
+gem "rfc", git: "https://github.com/your-username/rfc.git"
 ```
 
 Or install locally after cloning:
@@ -24,25 +24,25 @@ bundle exec rake install
 require "rfc"
 
 rfc = Rfc::Generator.new.for_natural_person(
-  name: "Luis Alberto",
-  first_last_name: "Osnaya",
-  second_last_name: "Balderas",
-  date_of_birth: "21/07/1986"
+  name: "Juan Carlos",
+  first_last_name: "Perez",
+  second_last_name: "Garcia",
+  date_of_birth: "15/03/1990"
 )
 
-puts rfc # => "OABL8607213H6"
+puts rfc # => "PEGJ900315PE9"
 ```
 
 You can also pass the birth date as separate values:
 
 ```ruby
 Rfc::Generator.new.for_natural_person(
-  name: "Luis Alberto",
-  first_last_name: "Osnaya",
-  second_last_name: "Balderas",
-  day: 21,
-  month: 7,
-  year: 1986
+  name: "Juan Carlos",
+  first_last_name: "Perez",
+  second_last_name: "Garcia",
+  day: 15,
+  month: 3,
+  year: 1990
 )
 ```
 
@@ -70,16 +70,16 @@ Example in the console:
 
 ```ruby
 Rfc::Generator.new.for_natural_person(
-  name: "Luis Alberto",
-  first_last_name: "Osnaya",
-  second_last_name: "Balderas",
-  date_of_birth: "21/07/1986"
+  name: "Juan Carlos",
+  first_last_name: "Perez",
+  second_last_name: "Garcia",
+  date_of_birth: "15/03/1990"
 )
 ```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [elosnaya/rfc](https://github.com/elosnaya/rfc).
+Bug reports and pull requests are welcome on GitHub at [your-username/rfc](https://github.com/your-username/rfc).
 
 ## License
 
