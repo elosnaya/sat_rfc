@@ -3,9 +3,9 @@
 RSpec.describe Rfc::Generator do
   subject(:generator) { described_class.new }
 
-  describe "#generate" do
+  describe "#for_natural_person" do
     it "returns the full RFC for a natural person using date_of_birth" do
-      rfc = generator.generate(
+      rfc = generator.for_natural_person(
         name: "Luis Alberto",
         first_last_name: "Osnaya",
         second_last_name: "Balderas",
@@ -16,7 +16,7 @@ RSpec.describe Rfc::Generator do
     end
 
     it "returns the full RFC when day, month, and year are provided" do
-      rfc = generator.generate(
+      rfc = generator.for_natural_person(
         name: "Luis Alberto",
         first_last_name: "Osnaya",
         second_last_name: "Balderas",
@@ -30,7 +30,7 @@ RSpec.describe Rfc::Generator do
 
     it "raises InvalidDateError when date information is missing" do
       expect do
-        generator.generate(
+        generator.for_natural_person(
           name: "Luis Alberto",
           first_last_name: "Osnaya",
           second_last_name: "Balderas"
@@ -40,7 +40,7 @@ RSpec.describe Rfc::Generator do
 
     it "raises InvalidDateError when date_of_birth has an invalid format" do
       expect do
-        generator.generate(
+        generator.for_natural_person(
           name: "Luis Alberto",
           first_last_name: "Osnaya",
           second_last_name: "Balderas",

@@ -23,7 +23,7 @@ bundle exec rake install
 ```ruby
 require "rfc"
 
-rfc = Rfc::Generator.new.generate(
+rfc = Rfc::Generator.new.for_natural_person(
   name: "Luis Alberto",
   first_last_name: "Osnaya",
   second_last_name: "Balderas",
@@ -36,7 +36,7 @@ puts rfc # => "OABL8607213H6"
 You can also pass the birth date as separate values:
 
 ```ruby
-Rfc::Generator.new.generate(
+Rfc::Generator.new.for_natural_person(
   name: "Luis Alberto",
   first_last_name: "Osnaya",
   second_last_name: "Balderas",
@@ -52,7 +52,7 @@ Rfc::Generator.new.generate(
 
 ```ruby
 begin
-  Rfc::Generator.new.generate(name: "Ana", first_last_name: "Lopez", second_last_name: "Garcia")
+  Rfc::Generator.new.for_natural_person(name: "Ana", first_last_name: "Lopez", second_last_name: "Garcia")
 rescue Rfc::Generator::InvalidDateError => e
   puts e.message # => "Date information missing"
 end
@@ -69,7 +69,7 @@ bin/console        # interactive console
 Example in the console:
 
 ```ruby
-Rfc::Generator.new.generate(
+Rfc::Generator.new.for_natural_person(
   name: "Luis Alberto",
   first_last_name: "Osnaya",
   second_last_name: "Balderas",
