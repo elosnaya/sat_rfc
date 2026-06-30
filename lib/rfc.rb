@@ -14,3 +14,5 @@ require_relative "rfc/natural_ten_digits_code_calculator"
 module Rfc
   class Error < StandardError; end
 end
+
+require_relative "rfc/generator"
