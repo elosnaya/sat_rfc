@@ -5,8 +5,8 @@ require_relative "lib/rfc/version"
 Gem::Specification.new do |spec|
   spec.name = "rfc"
   spec.version = Rfc::VERSION
-  spec.authors = ["RFC Contributors"]
-  spec.email = ["opensource@example.com"]
+  spec.authors = ["elOsnaya"]
+  spec.email = ["luisosnet@gmail.com"]
 
   spec.summary = "Generate Mexican RFC codes for natural persons (personas físicas)."
   spec.description = "Ruby library that generates RFC tax identifiers for Mexican natural persons using the SAT algorithm. Supports name normalization, homoclave, and verification digit calculation."
