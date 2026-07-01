@@ -21,5 +21,13 @@ RSpec.describe Rfc::HomoclaveCalculator do
 
       expect(calculator.calculate).to match(/\A[0-9A-Z]{2}\z/)
     end
+
+    it "returns the homoclave for a legal entity name" do
+      calculator = described_class.new(
+        legal_name: "Mu Networks S.A.P.I. de C.V."
+      )
+
+      expect(calculator.calculate).to eq("8U")
+    end
   end
 end
