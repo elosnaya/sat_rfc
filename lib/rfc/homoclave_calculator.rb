@@ -15,10 +15,11 @@ module Rfc
       "Y" => "38", "Z" => "39", "Ñ" => "40"
     }.freeze
 
-    def initialize(name:, first_last_name:, second_last_name:)
+    def initialize(name: nil, first_last_name: nil, second_last_name: nil, legal_name: nil)
       @name = name
       @first_last_name = first_last_name
       @second_last_name = second_last_name
+      @legal_name = legal_name
     end
 
     def calculate
@@ -73,7 +74,13 @@ module Rfc
     end
 
     def full_name_string
+      return @legal_name if present?(@legal_name)
+
       "#{@first_last_name} #{@second_last_name} #{@name}"
+    end
+
+    def present?(value)
+      !value.nil? && !value.to_s.strip.empty?
     end
 
     def add_missing_char_to_full_name(raw_full_name, missing_char)
